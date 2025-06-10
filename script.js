@@ -163,3 +163,18 @@ historyButton.addEventListener("click", () => {
     historyContainer.classList.toggle("history-hidden")
     historyContainer.classList.toggle("history")
 })
+
+
+
+
+const mobileMedia = window.matchMedia("(min-width: 360px) and (max-width: 480px)")
+function handleMedia(med) {
+    if (med.matches) {
+        buttons.forEach((button) => {
+            if (input.value === button.value) {
+                displayNumber(button)
+            }
+        })
+    }
+}
+handleMedia(mobileMedia)
