@@ -171,7 +171,7 @@ const mobileMedia = window.matchMedia("(min-width: 360px) and (max-width: 480px)
 function handleMedia(med) {
     if (med.matches) {
         input.addEventListener("input", () => {
-            displayNumber(input)
+            emptyArr.push(input.value)
         })
     }
 }
