@@ -159,7 +159,11 @@ function displayHistory(result, operand1, operand2, operator) {
         "operation": Number(operand1) + " " + operator + " " + Number(operand2) + " " + '=' + " " + Number(result)
     }
 
-    historyContainer.textContent = ""
+
+    if (historyContainer.textContent === "No history") {
+        historyContainer.textContent = ""
+    }
+
     historyContainer.innerHTML += `${history.operation} <br>`
 }
 
