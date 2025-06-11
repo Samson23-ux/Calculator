@@ -151,11 +151,15 @@ const historyButton = document.querySelector(".history-btn");
 const historyContainer = document.querySelector(".history-container");
 historyContainer.classList.add("history-hidden");
 
+historyContainer.textContent = "No history"
+
+
 function displayHistory(result, operand1, operand2, operator) {
     history = {
         "operation": Number(operand1) + " " + operator + " " + Number(operand2) + " " + '=' + " " + Number(result)
     }
 
+    historyContainer.textContent = ""
     historyContainer.innerHTML += `${history.operation} <br>`
 }
 
@@ -164,15 +168,10 @@ historyButton.addEventListener("click", () => {
     historyContainer.classList.toggle("history")
 })
 
-
-
-
 const mobileMedia = window.matchMedia("(min-width: 360px) and (max-width: 480px)")
 function handleMedia(med) {
     if (med.matches) {
-        input.addEventListener("input", (e) => {
-            e.preventDefault()
-        })
+        input.setAttribute("readonly", "")
     }
 }
 handleMedia(mobileMedia)
