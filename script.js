@@ -170,10 +170,8 @@ historyButton.addEventListener("click", () => {
 const mobileMedia = window.matchMedia("(min-width: 360px) and (max-width: 480px)")
 function handleMedia(med) {
     if (med.matches) {
-        buttons.forEach((button) => {
-            if (input.value === button.value) {
-                displayNumber(button)
-            }
+        input.addEventListener("input", () => {
+            displayNumber(input)
         })
     }
 }
