@@ -170,8 +170,8 @@ historyButton.addEventListener("click", () => {
 const mobileMedia = window.matchMedia("(min-width: 360px) and (max-width: 480px)")
 function handleMedia(med) {
     if (med.matches) {
-        input.addEventListener("input", () => {
-            emptyArr.push(input.value)
+        input.addEventListener("input", (e) => {
+            e.preventDefault()
         })
     }
 }
